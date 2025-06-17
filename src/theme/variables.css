@@ -1,2 +1,229 @@
-/* For information on how to create your own theme, please see:
+/* Ionic Variables and Theming. For more info, please see:
 http://ionicframework.com/docs/theming/ */
+
+/** Ionic CSS Variables **/
+:root {
+  /** primary **/
+  --ion-color-primary: #667eea;
+  --ion-color-primary-rgb: 102, 126, 234;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #5a6fce;
+  --ion-color-primary-tint: #7588ec;
+
+  /** secondary **/
+  --ion-color-secondary: #764ba2;
+  --ion-color-secondary-rgb: 118, 75, 162;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #68428f;
+  --ion-color-secondary-tint: #8459ab;
+
+  /** tertiary **/
+  --ion-color-tertiary: #f093fb;
+  --ion-color-tertiary-rgb: 240, 147, 251;
+  --ion-color-tertiary-contrast: #000000;
+  --ion-color-tertiary-contrast-rgb: 0, 0, 0;
+  --ion-color-tertiary-shade: #d381dd;
+  --ion-color-tertiary-tint: #f29efb;
+
+  /** success **/
+  --ion-color-success: #00b894;
+  --ion-color-success-rgb: 0, 184, 148;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 255, 255, 255;
+  --ion-color-success-shade: #00a282;
+  --ion-color-success-tint: #1ac09f;
+
+  /** warning **/
+  --ion-color-warning: #ffeaa7;
+  --ion-color-warning-rgb: 255, 234, 167;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0, 0, 0;
+  --ion-color-warning-shade: #e0ce93;
+  --ion-color-warning-tint: #ffecb0;
+
+  /** danger **/
+  --ion-color-danger: #e17055;
+  --ion-color-danger-rgb: 225, 112, 85;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #c6634b;
+  --ion-color-danger-tint: #e47e66;
+
+  /** dark **/
+  --ion-color-dark: #2c3e50;
+  --ion-color-dark-rgb: 44, 62, 80;
+  --ion-color-dark-contrast: #ffffff;
+  --ion-color-dark-contrast-rgb: 255, 255, 255;
+  --ion-color-dark-shade: #273646;
+  --ion-color-dark-tint: #414f62;
+
+  /** medium **/
+  --ion-color-medium: #92a3af;
+  --ion-color-medium-rgb: 146, 163, 175;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-contrast-rgb: 255, 255, 255;
+  --ion-color-medium-shade: #808f9a;
+  --ion-color-medium-tint: #9daab6;
+
+  /** light **/
+  --ion-color-light: #f8f9fa;
+  --ion-color-light-rgb: 248, 249, 250;
+  --ion-color-light-contrast: #000000;
+  --ion-color-light-contrast-rgb: 0, 0, 0;
+  --ion-color-light-shade: #dadbdc;
+  --ion-color-light-tint: #f9fafb;
+
+  /* Custom Game Theme Variables */
+  --game-bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --game-bg-animated: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --backdrop-blur: blur(10px);
+  --shadow-soft: 0 8px 32px rgba(31, 38, 135, 0.37);
+  --shadow-strong: 0 12px 40px rgba(0, 0, 0, 0.2);
+  --border-radius-soft: 12px;
+  --border-radius-strong: 20px;
+  --transition-smooth: all 0.3s ease;
+  --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Global Body Styling */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: var(--game-bg-animated);
+  background-size: 400% 400%;
+  animation: backgroundShift 15s ease infinite;
+}
+
+@keyframes backgroundShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Header Styling */
+ion-header ion-toolbar {
+  --background: transparent;
+  --color: white;
+  --border-color: transparent;
+  backdrop-filter: var(--backdrop-blur);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+ion-title {
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Enhancements */
+ion-button {
+  --border-radius: var(--border-radius-soft);
+  --box-shadow: var(--shadow-soft);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  transition: var(--transition-bounce);
+}
+
+ion-button:hover {
+  transform: translateY(-2px);
+  --box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Alert/Modal Styling */
+.alert-wrapper {
+  --background: var(--glass-bg);
+  backdrop-filter: var(--backdrop-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius-strong);
+  box-shadow: var(--shadow-strong);
+}
+
+.alert-head {
+  color: white;
+  font-weight: 700;
+}
+
+.alert-message {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.alert-button {
+  --color: white;
+  --background: var(--ion-color-primary);
+  font-weight: 600;
+}
+
+/* Dark theme overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ion-color-primary-shade: #7a8cff;
+    --ion-color-primary-tint: #8a9cff;
+  }
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  ion-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* iOS specific adjustments */
+.ios {
+  --ion-safe-area-top: env(safe-area-inset-top);
+  --ion-safe-area-bottom: env(safe-area-inset-bottom);
+  --ion-safe-area-left: env(safe-area-inset-left);
+  --ion-safe-area-right: env(safe-area-inset-right);
+}
+
+/* Material Design adjustments */
+.md {
+  ion-header ion-toolbar {
+    --min-height: 56px;
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  transition: var(--transition-smooth);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --glass-bg: rgba(255, 255, 255, 0.2);
+    --glass-border: rgba(255, 255, 255, 0.4);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  body {
+    animation: none;
+  }
+}
