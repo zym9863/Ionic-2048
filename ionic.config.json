@@ -1,0 +1,7 @@
+{
+  "name": "Ionic-2048",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
