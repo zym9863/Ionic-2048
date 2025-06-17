@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Ionic-2048</string>
+    <string name="title_activity_main">Ionic-2048</string>
+    <string name="package_name">io.ionic.game2048</string>
+    <string name="custom_url_scheme">io.ionic.game2048</string>
+</resources>
